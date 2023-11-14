@@ -140,7 +140,6 @@ public class Main {
 
         int[] zwischen = differentNumbersInArray(array);
 
-        Arrays.sort(zwischen);
 
         int[][] ergebnis = new int[zwischen.length][2];
         for (int i = 0; i < zwischen.length; i++) {
