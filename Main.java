@@ -4,9 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int[] ok = new int[]{Integer.MIN_VALUE,Integer.MIN_VALUE,0,4,-10,10,Integer.MIN_VALUE};
-        //System.out.println(Arrays.toString(bubbleSort(ok)));
-        System.out.println(twoSum(ok));
+        
     }
 
 
@@ -152,6 +150,7 @@ public class Main {
         return ergebnis;
     }
 
+    //zusammen mit isContainedInArray
     //gibt einen Array zurück, indem sich nur unterschiedliche Zahlen befinden
     public static int[] differentNumbersInArray(int[] array) {
         if (array.length == 0) return array;
@@ -172,7 +171,7 @@ public class Main {
     }
 
 
-    //source: https://bitbucket.ase.in.tum.de/projects/PGDP2324W02P03/repos/pgdp2324w02p03-solution/browse/src/pgdp/math/ControlStructuresII.java4
+    //source: https://bitbucket.ase.in.tum.de/projects/PGDP2324W03H01/repos/pgdp2324w03h01-solution/browse
     //schaut, ob eine Zahl eine Primzahl ist
     public static boolean isPrime(int n) {
         if (n < 2) return false;
@@ -182,7 +181,7 @@ public class Main {
         return true;
     }
 
-    //source: https://bitbucket.ase.in.tum.de/projects/PGDP2324W03H01/repos/pgdp2324w03h01-solution/browse/src/pgdp/arrayfun/ArrayFunctions.java
+    //source: https://bitbucket.ase.in.tum.de/projects/PGDP2324W03H01/repos/pgdp2324w03h01-solution/browse
     //berechnet die Summe aller Quadrate in einem Array ohne Long Overflow
     public static long sumOfSquares(int[] array) {
         long sumOfSquares = 0;
@@ -199,7 +198,8 @@ public class Main {
         return sumOfSquares;
     }
 
-    //source: https://bitbucket.ase.in.tum.de/projects/PGDP2324W03H01/repos/pgdp2324w03h01-solution/browse/src/pgdp/arrayfun/ArrayFunctions.java
+    //source: https://bitbucket.ase.in.tum.de/projects/PGDP2324W03H01/repos/pgdp2324w03h01-solution/browse
+    //braucht Math library
     //macht zwei Arrays zu einem großen Array zusammen in Abwechslung
     public static int[] zip(int[] a, int[] b) {
         int[] zippedArray = new int[a.length + b.length];
@@ -223,7 +223,7 @@ public class Main {
         return zippedArray;
     }
 
-    //https://bitbucket.ase.in.tum.de/projects/PGDP2324W03H01/repos/pgdp2324w03h01-solution/browse/src/pgdp/arrayfun/ArrayFunctions.java
+    //source: https://bitbucket.ase.in.tum.de/projects/PGDP2324W03H01/repos/pgdp2324w03h01-solution/browse
     //zippt einen 2D-Array zusammen
     public static int[] zipMany(int[][] arrays) {
         int maxLength = 0;
@@ -249,7 +249,7 @@ public class Main {
         return zippedArray;
     }
 
-    //source: https://bitbucket.ase.in.tum.de/projects/PGDP2324W03H01/repos/pgdp2324w03h01-solution/browse/src/pgdp/arrayfun/ArrayFunctions.java
+    //source: https://bitbucket.ase.in.tum.de/projects/PGDP2324W03H01/repos/pgdp2324w03h01-solution/browse
     //rotiert einen Array
     public static void rotate(int[] array, int amount) {
         int length = array.length;
@@ -276,10 +276,10 @@ public class Main {
         }
     }
 
+    //gibt alle n Fibonaccizahlen zurück
     public static int[] fibonacciArray(int n){
         if(n<=0)return new int[0];
         if(n==1)return new int[]{1};
-        int fibonacciZahl = 1;
         int[] fibonacciArray = new int[n];
         fibonacciArray[0]=1;
         fibonacciArray[1]=1;
@@ -313,9 +313,6 @@ public class Main {
                     ergebnis[i][j] = ergebnis[i][j] + a[i][k] * b[k][j];
                 }
             }
-        }
-        for (int i = 0; i < ergebnis.length; i++) {
-            System.out.println(Arrays.toString(ergebnis[i]));
         }
         return ergebnis;
     }
@@ -423,7 +420,7 @@ public class Main {
         int defaultLinks = 0;
         int defaultRechts = 1;
         int ergebnis=1;
-        for (int i = 3; i < n; i++) {
+        for (int i = 3; i <= n; i++) {
             defaultLinks = defaultRechts;
             defaultRechts = ergebnis;
             ergebnis = defaultLinks + defaultRechts;
