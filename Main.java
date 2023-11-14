@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        
+        //https://github.com/Domkroell/PGDP/tree/main
     }
 
 
@@ -174,7 +174,8 @@ public class Main {
     //source: https://bitbucket.ase.in.tum.de/projects/PGDP2324W03H01/repos/pgdp2324w03h01-solution/browse
     //schaut, ob eine Zahl eine Primzahl ist
     public static boolean isPrime(int n) {
-        if (n < 2) return false;
+        if(n<0) return false;
+        if (n < 2) return true;
         for (int i = 2; i * i <= n; i++) {
             if (n % i == 0) return false;
         }
