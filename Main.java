@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //int[] ok = new int[]{0, 0, 0, 1, 2, 3, 1, -1, -12, Integer.MIN_VALUE, Integer.MAX_VALUE,0,0,5};
+        int[] ok = new int[]{Integer.MIN_VALUE,Integer.MIN_VALUE,0,4,-10,10,Integer.MIN_VALUE};
         //System.out.println(Arrays.toString(bubbleSort(ok)));
-        int[]ok = new int[]{Integer.MAX_VALUE};
+        System.out.println(twoSum(ok));
     }
 
 
@@ -486,7 +486,6 @@ public class Main {
             System.out.println("This number does not fit in any Datatype!");
         }
     }
-
     public static boolean containsSubString(String eingabe, String substring){
         if(eingabe.equals(substring))return true;
         if(substring.isEmpty())return true;
@@ -500,5 +499,50 @@ public class Main {
             }
         }
         return false;
+    }
+
+    public static long twoSum(int[]eingabe){
+        if(eingabe.length<2)return -1;
+        long ergebnis = eingabe[0]+eingabe[1];
+        for (int i = 0; i < eingabe.length-1; i++) {
+            for (int j = i+1; j < eingabe.length; j++) {
+                if((long)eingabe[i]+(long)eingabe[j]>ergebnis)ergebnis = (long)eingabe[i]+(long)eingabe[j];
+            }
+        }
+        return ergebnis;
+    }
+
+    public static int[]removeNumberInArray(int[]eingabe, int zahl){
+        int zahlen = 0;
+
+        for (int i = 0; i < eingabe.length; i++) {
+            if(eingabe[i]==zahl)zahlen++;
+        }
+        int[]ergebnis = new int[eingabe.length-zahlen];
+        int ergebnisIndex = 0;
+        for (int i = 0; i < eingabe.length; i++) {
+            if(eingabe[i]!=zahl){
+                ergebnis[ergebnisIndex]=eingabe[i];
+                ergebnisIndex++;
+            }
+        }
+        return ergebnis;
+    }
+
+    public static int[]removeNumbersLessThanInArray(int[]eingabe, int zahl){
+        int zahlen = 0;
+
+        for (int i = 0; i < eingabe.length; i++) {
+            if(eingabe[i]<zahl)zahlen++;
+        }
+        int[]ergebnis = new int[eingabe.length-zahlen];
+        int ergebnisIndex = 0;
+        for (int i = 0; i < eingabe.length; i++) {
+            if(eingabe[i]>=zahl){
+                ergebnis[ergebnisIndex]=eingabe[i];
+                ergebnisIndex++;
+            }
+        }
+        return ergebnis;
     }
 }
