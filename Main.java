@@ -290,6 +290,7 @@ public class Main {
     }
 
     public static int[][]multiplyMatrices(int[][]a, int[][]b) {
+        if(a.length==0||b.length==0)return new int[0][0];
         if (a[0].length != b.length) return new int[0][0];
         for (int i = 0; i < a.length; i++) {
             if (a[i].length != a[0].length) return new int[0][0];
